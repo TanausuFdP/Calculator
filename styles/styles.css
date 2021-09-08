@@ -1,0 +1,87 @@
+body{
+    font-family: "Helvetica Neue", sans-serif;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right bottom, #ffd380, #6bc6e2) fixed;
+}
+
+.calculator-grid{
+    align-content: center;
+    background-color: white;
+    width: 309.375px;
+    height: 550px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.2), 0 10px 15px 0 rgba(0, 0, 0, 0.24);
+    margin: 75px auto 0 auto;
+}
+
+.input{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 66px);
+    grid-template-rows: repeat(5, 66px);
+}
+
+.input > button{
+    cursor: pointer;
+    font-size: 20px;
+    margin: 5px;
+    border: 0;
+    box-shadow: 0 0 2.5px 0 rgba(0, 0, 0, 0.2), 0 2.5px 2.5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.input > button:hover{
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    transition: 0.2s;
+    font-size: 22px;
+}
+
+.input > button:active{
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+    transition: 0.1s;
+    font-size: 18px;
+}
+
+.function{
+    background: linear-gradient(#ffc17b, #e2a739);
+    color: white;
+    border-radius: 10px;
+}
+
+.digit{
+    background: linear-gradient(#f0f0f0, #e4e4e4);
+    border-radius: 100%;
+}
+
+.digit:active{
+    color: black;
+}
+
+.equals{
+    background: linear-gradient(#7bc4ff, #1390d8);
+    grid-column: span 2;
+    color: white;
+    border-radius: 10px;
+}
+
+.output{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    height: auto;
+    min-height: 120px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand{
+    color: gray;
+}
+
+.current-operand{
+    font-size: 30px;
+    font-weight: bold;
+}
