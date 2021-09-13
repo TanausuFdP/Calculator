@@ -11,30 +11,31 @@
 <body>
 	<div class="calculator-grid">
 		<div class="output">
-			<div class="previous-operand"></div>
-			<div class="current-operand"></div>
+			<div class="previous-operand" data-previous-operand></div>
+			<div class="current-operand" data-current-operand></div>
 		</div>
 		<div class="input">
-			<button class="function">AC</button>
-			<button class="function">DEL</button>
-			<button class="function">^</button>
-			<button class="function">÷</button>
-			<button class="digit">7</button>
-			<button class="digit">8</button>
-			<button class="digit">9</button>
-			<button class="function">x</button>
-			<button class="digit">4</button>
-			<button class="digit">5</button>
-			<button class="digit">6</button>
-			<button class="function">-</button>
-			<button class="digit">1</button>
-			<button class="digit">2</button>
-			<button class="digit">3</button>
-			<button class="function">+</button>
-			<button class="digit">.</button>
-			<button class="digit">0</button>
-			<button class="equals">=</button>
+			<button class="function" data-all-clear>AC</button>
+			<button class="function" data-delete>DEL</button>
+			<button class="function" data-operation>^</button>
+			<button class="function" data-operation>÷</button>
+			<button class="digit" data-number>7</button>
+			<button class="digit" data-number>8</button>
+			<button class="digit" data-number>9</button>
+			<button class="function" data-operation>x</button>
+			<button class="digit" data-number>4</button>
+			<button class="digit" data-number>5</button>
+			<button class="digit" data-number>6</button>
+			<button class="function" data-operation>-</button>
+			<button class="digit" data-number>1</button>
+			<button class="digit" data-number>2</button>
+			<button class="digit" data-number>3</button>
+			<button class="function" data-operation>+</button>
+			<button class="digit" data-number>.</button>
+			<button class="digit" data-number>0</button>
+			<button class="equals" data-equals>=</button>
 		</div>
 	</div>
+	<div env></div>
 </body>
 </html>
