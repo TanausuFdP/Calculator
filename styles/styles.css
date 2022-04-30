@@ -15,6 +15,10 @@ body{
     margin: 75px auto 0 auto;
 }
 
+.invisible{
+    font-size: 0;
+}
+
 .input{
     display: grid;
     justify-content: center;

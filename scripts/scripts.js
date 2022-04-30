@@ -1,3 +1,6 @@
+var x = 0; var y = 0;
+var mouseX = 0; var mouseY = 0;
+
 class CalculatorModel {
     static previousOperand = '';
     static currentOperand = '0';
@@ -110,6 +113,33 @@ class CalculatorController {
         CalculatorModel.previousOperand = '';
         this.calculatorView.updateDisplay();
     }
+
+    onDragStart(event){
+        event
+           .dataTransfer
+           .setData('text/plain', event.target.id);
+	x = event.target.getBoundingClientRect().x;
+	y = event.target.getBoundingClientRect().y;
+	mouseX = event.clientX;
+	mouseY = event.clientY;
+    }
+
+    onDragOver(event){
+	event.preventDefault();
+    }
+
+    onDrag(event){
+	const moveX = x + (event.clientX - mouseX);
+        const moveY = y - (mouseY - event.clientY);
+	event.target.style.marginLeft = moveX + 'px';
+	event.target.style.marginTop = moveY + 'px';
+    }
+
+    onDrop(event){
+	event
+	   .dataTransfer
+	   .clearData();
+    }
 }
 
 
@@ -120,6 +150,7 @@ const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
+const calculatorElement = document.querySelector('[data-calculator]');
 
 const env = document.querySelector('[env]');
 
@@ -147,4 +178,20 @@ deleteButton.addEventListener('click', () => {
 
 allClearButton.addEventListener('click', () => {
     calculator.clear();
+});
+
+calculatorElement.addEventListener('dragstart', (event) => {
+    calculator.onDragStart(event);
+});
+
+calculatorElement.addEventListener('dragover', (event) => {
+    calculator.onDragOver(event);
+});
+
+calculatorElement.addEventListener('drag', (event) => {
+    calculator.onDrag(event);
+});
+
+calculatorElement.addEventListener('drop', (event) => {
+    calculator.onDrop(event);
 });

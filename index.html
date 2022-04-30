@@ -9,7 +9,7 @@
 	<script src="scripts/scripts.js" defer></script>
 </head>
 <body>
-	<div class="calculator-grid">
+	<div class="calculator-grid" draggable="true" data-calculator>
 		<div class="output">
 			<div class="previous-operand" data-previous-operand></div>
 			<div class="current-operand" data-current-operand></div>
@@ -36,6 +36,6 @@
 			<button class="equals" data-equals>=</button>
 		</div>
 	</div>
-	<div env></div>
+	<div env class="invisible"></div>
 </body>
 </html>
